@@ -14,23 +14,27 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public List<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 
-    public Customer getCustomerById(Long id){
+    public Customer getCustomerById(Long id) {
         return customerRepository.findById(id).orElse(null);
     }
 
-    public Customer addCustomer(Customer customer){
+    public Customer addCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
-    public Customer updateCustomer(Customer customer){
+    public Customer updateCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
-   /* public List<Customer> getCustomersByName(String name){
-        return customerRepository.findByName(name);
-    }*/
+    public void deleteCustomer(Customer customer) {
+        customerRepository.delete(customer);
+    }
+
+    public List<Customer> getCustomersByFirstName(String name) {
+        return customerRepository.findByFirstName(name);
+    }
 }

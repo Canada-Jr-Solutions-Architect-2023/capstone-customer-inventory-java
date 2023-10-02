@@ -1,0 +1,32 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo in the pre build phase...
+  build:
+    commands:
+      - echo build started on date...
+      - apt-get update -y
+      - apt-get install -y maven
+      - echo building the customer-inventory
+      - mvn install
+      - mvn compile
+      - mvn process-resources
+      - mvn clean install spring-boot:repackage -Dmain=com.information.customer.CustomerInventoryApplication
+      - mvn clean install spring-boot:repackage
+      - mvn clean install
+      - mvn clean package
+      - mvn test-compile
+      - mvn process-resources
+      - mvn verify
+      - mvn clean install
+  post_build:
+    commands:
+      - echo completed on date...
+artifacts:
+  files:
+    - build/libs/customer-inventory-0.0.1-SNAPSHOT.jar
+  discard-paths: yes

@@ -9,8 +9,6 @@ phases:
   build:
     commands:
       - echo build started on date...
-      - apt-get update -y
-      - apt-get install -y maven
       - echo building the customer-inventory
       - mvn install
       - mvn compile

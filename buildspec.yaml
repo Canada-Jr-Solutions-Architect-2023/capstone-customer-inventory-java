@@ -26,5 +26,5 @@ phases:
       - echo completed on date...
 artifacts:
   files:
-    - build/libs/Customer-Inventory-0.0.1-SNAPSHOT.jar
+    - target/*
   discard-paths: yes

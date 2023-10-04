@@ -112,8 +112,10 @@
                 <configuration>
                     <excludes>
                         <exclude>
-                            **/*IntegrationTests.java
-                            **/*RepositoryTests.java
+                            CustomerIntegrationTests.java
+                        </exclude>
+                        <exclude>
+                            CustomerRepositoryTests.java
                         </exclude>
                     </excludes>
                 </configuration>

@@ -49,4 +49,9 @@ public class CustomerController {
     public void deleteCustomer(@RequestBody Customer customer) {
         this.customerService.deleteCustomer(customer);
     }
+
+    @GetMapping("/id/{id}")
+    public Customer getCustomerById(@PathVariable Long id) {
+        return this.customerService.getCustomerById(id);
+    }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FeignController {
     @Autowired
     private FeignServiceUtil feignServiceUtil;
-    @GetMapping("/demo-name")
+    @GetMapping("/policy/feignTest")
     public String getName(){
         return feignServiceUtil.getDemo();
     }

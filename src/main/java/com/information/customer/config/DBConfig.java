@@ -34,9 +34,12 @@ public class DBConfig {
     @Bean
     public DataSource dataSourceProd() throws SQLException {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
-        dataSource.setUrl("jdbc:mysql://developer-rds-2-cluster.cfqctdytya09.us-east-2.rds.amazonaws.com:3306/loinsurance?createDatabaseIfNotExist=true");
+        dataSource.setUrl("jdbc:mysql://canada-insurance-instance-1.cfqctdytya09.us-east-2.rds.amazonaws.com:3306/loinsurance?createDatabaseIfNotExist=true");
         dataSource.setUsername("admin");
-        dataSource.setPassword("Be.Cognizant2022!");
+        dataSource.setPassword("Be.Cognizant2023!");
+        /*dataSource.setUrl("jdbc:mysql://canada-insurance-instance-1.cfqctdytya09.us-east-2.rds.amazonaws.com:3306/loinsurance?createDatabaseIfNotExist=true");
+        dataSource.setUsername("admin");
+        dataSource.setPassword("Be.Cognizant2023!");*/
         dataSource.setDriver(new Driver());
         return dataSource;
     }
